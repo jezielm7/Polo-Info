@@ -4,9 +4,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import MoreInfo from './pages/MoreInfo';
+import Home from '../pages/Home';
+import Profile from '../pages/Profile';
+import MoreInfo from '../pages/MoreInfo';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -65,7 +65,7 @@ const Routes = () => {
           tabBarIcon: ({ size, focused }) => {
             return (
               <Icon
-                name="md-person-outline"
+                name="person-sharp"
                 size={size}
                 color={focused ? '#bf94ff' : '#efeff1'}
               />
