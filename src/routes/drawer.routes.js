@@ -17,7 +17,7 @@ const DrawerRouter = () => {
       <Navigator
         initialRouteName="Home"
         drawerContent={Drawer}
-        drawerType="slide"
+        drawerType="front"
       >
         <Screen name="Home" component={Routes} options={{ }} />
         <Screen name="MoreInfo" component={MoreInfo} options={{ }} />

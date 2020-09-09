@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { DrawerActions } from '@react-navigation/drawer';
 
 import Icon from 'react-native-vector-icons/Ionicons';
-
-// import HamburguerMenu from '../../components/Hamburguer';
 
 import {
   Container,
