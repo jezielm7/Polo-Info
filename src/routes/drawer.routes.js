@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import MoreInfo from '../pages/MoreInfo';
 import Drawer from '../components/Drawer';
+import Routes from './routes';
 
 const { Navigator, Screen } = createDrawerNavigator();
 
@@ -14,11 +15,12 @@ const DrawerRouter = () => {
   return (
     <NavigationContainer>
       <Navigator
+        initialRouteName="Home"
         drawerContent={Drawer}
         drawerType="slide"
       >
-        <Screen name="Home" component={Home} options={{ }} />
-        <Screen name="More" component={MoreInfo} options={{ }} />
+        <Screen name="Home" component={Routes} options={{ }} />
+        <Screen name="MoreInfo" component={MoreInfo} options={{ }} />
         <Screen name="Profile" component={Profile} options={{ }} />
       </Navigator>
     </NavigationContainer>

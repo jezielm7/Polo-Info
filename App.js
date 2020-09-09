@@ -1,15 +1,16 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 
-import Routes from './src/routes/routes';
+// import Routes from './src/routes/routes';
+import DrawerRouter from './src/routes/drawer.routes';
 
-const polonews = () => {
+const App = () => {
   return (
     <>
       <StatusBar backgroundColor="#000012" />
-      <Routes />
+      <DrawerRouter />
     </>
   );
 }
 
-export default polonews;
+export default App;
