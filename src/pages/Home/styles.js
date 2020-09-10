@@ -22,21 +22,40 @@ export const MenuButton = styled.TouchableOpacity`
   padding-right: 95px;
 `;
 
-export const ButtonArea = styled.View`
+export const ContentSection = styled.View`
+  padding: 0 6px 15px;
+`;
+
+export const InfoContainer = styled.TouchableOpacity`
+  background: #efeff1;
+  border-radius: 10px;
+  flex-direction: row;
+  height: 110px;
+  padding: 5px 35px;
   align-items: center;
   justify-content: center;
 `;
 
-export const Button = styled.TouchableOpacity`
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #eee;
+export const InfoImage = styled.Image`
+  width: 105px;
+  height: 95px;
+  margin-left: 45px;
   border-radius: 10px;
 `;
 
-export const BtnText = styled.Text`
-  color: #efeff2;
+export const InfoTxtContainer = styled.View`
+  margin-left: 12px;
+  margin-right: 42px;
+`;
+
+export const InfoTitle = styled.Text`
+  color: #2E4052;
   font-size: 18px;
-  text-align: center;
+  font-weight: bold;
+`;
+
+export const InfoSubTitle = styled.Text`
+  color: #34495E;
+  font-size: 14px;
+  padding-top: 12px;
 `;

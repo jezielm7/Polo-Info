@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import {
@@ -19,12 +19,10 @@ import {
 } from './styles';
 
 const MoreInfo = () => {
-  const [text, setText] = useState('');
-
-  const { goBack } = useNavigation();
+  const { navigate } = useNavigation();
 
   function handleNavigateBack() {
-    goBack();
+    navigate('Home');
   }
 
   return (
