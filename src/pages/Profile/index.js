@@ -26,7 +26,7 @@ const Profile = () => {
 
         <UserInfo>
           <Username>Jeziel M.</Username>
-          <UserStatus>Abstracting ⚛</UserStatus>
+          <UserStatus>Abstracting  ⚛</UserStatus>
         </UserInfo>
 
           <Icon name="qrcode-scan" size={28} color={'#607D8B'} />

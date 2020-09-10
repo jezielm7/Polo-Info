@@ -6,19 +6,20 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  padding: 15px;
+  padding: 30px 15px;
   flex-direction: row;
   align-items: center;
 `;
 
 export const Title = styled.Text`
   color: #efeff2;
-  font-size: 28px;
+  font-size: 30px;
+  font-weight: bold;
   text-align: center;
 `;
 
 export const MenuButton = styled.TouchableOpacity`
-  padding-right: 100px;
+  padding-right: 95px;
 `;
 
 export const ButtonArea = styled.View`
