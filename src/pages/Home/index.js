@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -21,29 +22,40 @@ import {
 } from './styles';
 
 const Home = () => {
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    api.get('http://appapi.polocaruaru.com.br/api/public/eventos').then(res => {
+      setInfo(res.data);
+    });
+  }, []);
+
   const { navigate, openDrawer } = useNavigation();
 
   function navigateToMoreInfo() {
     navigate('More');
   }
 
-  const InfoItem = () => (
-    <ContentSection>
-        <InfoContainer>
-          <InfoImage source={InfoImg} />
+  const InfoItem = () => {
+    { return (
+      info.map(info => (
+        <ContentSection>
+          <InfoContainer onPress={navigateToMoreInfo} >
+            <InfoImage source={InfoImg} />
 
-          <InfoTxtContainer>
-            <InfoTitle numberOfLines={1} >
-              Polo oferece segurança para aproveitar feriado de sete de setembro
-            </InfoTitle>
-            <InfoSubTitle numberOfLines={2}>
-              Para quem quer aproveitar o feriado da independência com a familía,
-              o Polo Caruaru é uma excelente opção.
-            </InfoSubTitle>
-          </InfoTxtContainer>
-        </InfoContainer>
-      </ContentSection>
-  );
+            <InfoTxtContainer>
+              <InfoTitle numberOfLines={1} key={info.id} >
+                {item.nome}
+              </InfoTitle>
+              <InfoSubTitle numberOfLines={2}>
+                Para quem quer aproveitar o feriado da independência com a familía,
+                o Polo Caruaru é uma excelente opção.
+              </InfoSubTitle>
+            </InfoTxtContainer>
+          </InfoContainer>
+        </ContentSection>
+    )));
+  }};
 
   return (
     <Container>
@@ -55,10 +67,12 @@ const Home = () => {
         <Title>Polo Info</Title>
       </Header>
 
-      <InfoItem />
-      <InfoItem />
-      <InfoItem />
-      <InfoItem />
+      <FlatList
+        data={info}
+        renderItem={InfoItem}
+        keyExtractor={info => info.id}
+      />
+
 
     </Container>
   );
