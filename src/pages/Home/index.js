@@ -6,8 +6,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import api from '../../services/api';
 
-import InfoImg from '../../assets/7_setembro.png';
-
 import {
   Container,
   Header,
@@ -25,7 +23,7 @@ const Home = () => {
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    api.get('http://appapi.polocaruaru.com.br/api/public/eventos').then(res => {
+    api.get('/eventos').then(res => {
       setInfo(res.data);
     });
   }, []);
@@ -36,26 +34,23 @@ const Home = () => {
     navigate('More');
   }
 
-  const InfoItem = () => {
-    { return (
-      info.map(info => (
-        <ContentSection>
-          <InfoContainer onPress={navigateToMoreInfo} >
-            <InfoImage source={InfoImg} />
+  const InfoItem = ({item: info}) => (
+    <ContentSection>
+      <InfoContainer onPress={navigateToMoreInfo} >
+        <InfoImage source={{uri: info.imagem}} />
 
-            <InfoTxtContainer>
-              <InfoTitle numberOfLines={1} key={info.id} >
-                {item.nome}
-              </InfoTitle>
-              <InfoSubTitle numberOfLines={2}>
-                Para quem quer aproveitar o feriado da independência com a familía,
-                o Polo Caruaru é uma excelente opção.
-              </InfoSubTitle>
-            </InfoTxtContainer>
-          </InfoContainer>
-        </ContentSection>
-    )));
-  }};
+        <InfoTxtContainer>
+          <InfoTitle numberOfLines={1}>
+            {info.nome}
+          </InfoTitle>
+          <InfoSubTitle numberOfLines={2}>
+            Para quem quer aproveitar o feriado da independência com a familía,
+            o Polo Caruaru é uma excelente opção.
+          </InfoSubTitle>
+        </InfoTxtContainer>
+      </InfoContainer>
+    </ContentSection>
+  );
 
   return (
     <Container>

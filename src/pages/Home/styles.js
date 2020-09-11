@@ -30,15 +30,15 @@ export const InfoContainer = styled.TouchableOpacity`
   background: #efeff1;
   border-radius: 10px;
   flex-direction: row;
-  height: 110px;
-  padding: 5px 35px;
+  height: 100px;
+  padding: 0 35px;
   align-items: center;
   justify-content: center;
 `;
 
 export const InfoImage = styled.Image`
-  width: 105px;
-  height: 95px;
+  width: 95px;
+  height: 72px;
   margin-left: 45px;
   border-radius: 10px;
 `;
